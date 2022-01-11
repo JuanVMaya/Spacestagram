@@ -1,0 +1,41 @@
+.app{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    z-index: 2;
+    font-weight: bolder;
+}
+.navLink {
+    text-decoration: none;
+    color: #D5D5D5;	
+    cursor: pointer;
+    transition: 0.15s ease-out;
+}
+.navLink:hover,
+.navLink:focus{
+    color: #B2F9FC;
+}
+.footer{
+    width: 80%;
+    margin: auto;
+    padding: auto;
+    align-items: center;
+    z-index: 2;
+}
+.footerText{
+    color: #B2F9FC;
+    font-size: 1rem;
+    line-height: 0.8rem;
+    text-align: center;
+}
