@@ -1,13 +1,14 @@
-.app{
+.main {
+    font-family: inherit;
     width: 80%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow: hidden;
-
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -16,24 +17,28 @@
     z-index: 2;
     font-weight: bolder;
 }
+
 .navLink {
     text-decoration: none;
-    color: #D5D5D5;	
+    color: #D5D5D5;
     cursor: pointer;
     transition: 0.15s ease-out;
 }
+
 .navLink:hover,
-.navLink:focus{
+.navLink:focus {
     color: #B2F9FC;
 }
-.footer{
+
+.footer {
     width: 80%;
     margin: auto;
     padding: auto;
     align-items: center;
     z-index: 2;
 }
-.footerText{
+
+.footerText {
     color: #B2F9FC;
     font-size: 1rem;
     line-height: 0.8rem;

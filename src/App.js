@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import classes from './App.module.css';
 import axios from 'axios';
 import PhotoItem from './components/PhotoItem';
+import LoadingDisplay from './components/LoadingDisplay';
 
 function App() {
   const [dataNASA, setDataNASA] = useState([]);
@@ -13,23 +14,24 @@ function App() {
       try {
         const { data: response } = await axios.get('https://api.nasa.gov/planetary/apod?api_key=Ajvrq2LlgIHkGKscdef5CdwzvO2kNSA3Q5ezWMDD&start_date=2021-12-31');
         setDataNASA(response);
-        console.log(response);
       } catch (error) {
-        console.error(error.message);
+        window.alert(`Error fetching data from NASA API \n The error is: ${error.message} \n Please try refresing the page.`);
       }
       setLoading(false);
     }
-
     fetchData();
   }, []);
 
+  dataNASA.forEach(item => { item.likeStatus = false });
   const processedPhotosList = dataNASA.map(item => (
-    <PhotoItem 
-    title={item.title}
-    url={item.url}
-    explanation={item.explanation}
-    date={item.date}
-    copyright={item.copyright}
+    <PhotoItem
+      key={item.date}
+      title={item.title}
+      url={item.url}
+      explanation={item.explanation}
+      date={item.date}
+      copyright={item.copyright}
+      likeStatus={item.likeStatus}
     />
   ));
 
@@ -39,8 +41,8 @@ function App() {
         <h1>Spacestagram</h1>
         <a href="https://juanvmaya.github.io/personal-portfolio/" target="_blank" rel="noopener noreferrer" className={classes.navLink}>Check Personal Portfolio</a>
       </header>
-      <div className={classes.app}>
-        {loading && <p>Loading...</p>}
+      <div className={classes.main}>
+        {loading && <LoadingDisplay />}
         {!loading && processedPhotosList}
       </div>
       <footer className={classes.footer}>

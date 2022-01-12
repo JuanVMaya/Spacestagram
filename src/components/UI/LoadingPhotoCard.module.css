@@ -1,0 +1,88 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  height: 40vh;
+  padding: 1em;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.659);
+  border-radius: 16px;
+  background: linear-gradient(to right bottom, #B2F9FC, #D5D5D5);
+  backdrop-filter: blur(0.5rem);
+  align-self: center;
+  align-items: center;
+  margin: 0 2vh 2vh;
+  z-index: 2;
+}
+
+.titleBox,
+.imageBox,
+.dateBox,
+.authorBox,
+.likeBox,
+.learnMoreBox {
+  width: 100%;
+  background-color: #ffffffa8;
+  border-radius: 0.25em;
+  animation: pulsation 1.5s infinite ease-in-out;
+}
+
+.titleBox {
+  margin-top: 0.5em;
+  height: 1em;
+}
+
+.imageBox {
+  margin-top: 0.5em;
+  height: 7em;
+}
+
+.dateBox {
+  margin-top: 0.5em;
+  width: 50%;
+  height: 1em;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.authorBox {
+  margin-top: 0.5em;
+  width: 60%;
+  height: 1em;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.interactionSection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.likeBox {
+  width: 1em;
+  height: 1em;
+}
+
+.learnMoreBox {
+  width: 30%;
+  height: 1em;
+  margin-left: auto;
+}
+
+@keyframes pulsation {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
