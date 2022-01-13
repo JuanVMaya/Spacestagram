@@ -1,11 +1,13 @@
-body {
-  box-sizing: border-box;
+body {  
   display: block;
-  margin:0;
-  padding: 0;
   scroll-behavior: smooth;
   font-family: 'Roboto';
   background-image: url('./assets/spaceBackground.jpg');
+}
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
 }
 h1,h2{
  color:#B2F9FC;

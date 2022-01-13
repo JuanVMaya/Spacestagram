@@ -1,23 +1,71 @@
-.photo {
+.photoBox,
+.dateBox,
+.authorBox {
+    margin-top: 0.5em;
+}
+
+.photoBox {
     max-width: 100%;
     border-radius: 8px;
 }
-.title{
-    margin-bottom: 0.5em;
+
+.dateBox,
+.authorBox {
+    justify-content: flex-start;
+    margin-right: auto;
 }
 
-.likeButton {
-    padding: 0;
-    margin: 0;
-    background: none;
-    border: none;
+
+.interactionSection {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5em;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.likeButton,
+.learnMoreButton {
+    padding: 0.2em 0.4em 0.2em 0.4em;
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    font-size: 1.5em;
+    font-size: 0.75em;
+    color: #D5D5D5;
+    background-color: #000000;
+    border-radius: 0.5em;
+    border: 0.15em solid #D5D5D5;
+    box-shadow: 0em 0em 1.5em -0.4em rgba(0, 0, 0, 0.67);
+    transition: all .2s ease-in-out;
 }
 
-.unlikeButton {
-    height: 1.5em;
-    width: 1.5em;
+.learnMoreButton:hover{
+    background-color: #D5D5D5;
+    color: #000000;
+    border: 0.15em solid #000000;
+    transition: all .2s ease-in-out;
+}
+
+.learnMoreButton:active{
+    transform: scale(0.95);
+    transition: all .3s ease-in-out;
+}
+
+.statusIcon:active {
+    animation: changingLikeStatus 0.1s ease-in-out;
+}
+
+@keyframes changingLikeStatus {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.5);
+        /* Creates an out of bounds clicking sensation*/
+    }
 }
