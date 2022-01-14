@@ -4,6 +4,11 @@ import likeIcon from "../assets/likeIcon.svg";
 import unlikeIcon from "../assets/unlikeIcon.svg";
 
 const PhotoItem = (props) => {
+
+    const changeLikeStatusHandler = () => {
+        props.changeLikeStatus(props.date,props.likeStatus);
+    }
+
     return (
         <PhotoCard>
             <h3>{props.title}</h3>
@@ -18,15 +23,11 @@ const PhotoItem = (props) => {
             <div className={classes.interactionSection}>
                 {/* If picture is liked, display the liked icon */}
                 {props.likeStatus &&
-                    <button className={classes.likeButton}>
-                        <img src={likeIcon} className={classes.statusIcon}/>
-                    </button>
+                    <img src={likeIcon} className={classes.statusIcon} onClick={changeLikeStatusHandler} />
                 }
                 {/* If picture is unliked, display the unliked icon */}
                 {!props.likeStatus &&
-                    <button className={classes.likeButton}>
-                        <img src={unlikeIcon} className={classes.statusIcon}/>
-                    </button>
+                    <img src={unlikeIcon} className={classes.statusIcon} onClick={changeLikeStatusHandler} />
                 }
                 <button className={classes.learnMoreButton}>Learn More &#187;</button>
             </div>

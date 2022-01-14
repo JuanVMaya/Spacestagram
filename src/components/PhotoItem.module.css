@@ -32,19 +32,16 @@
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    font-size: 0.75em;
-    color: #D5D5D5;
-    background-color: #000000;
+    color: #000000;
+    background-color: transparent;
     border-radius: 0.5em;
-    border: 0.15em solid #D5D5D5;
-    box-shadow: 0em 0em 1.5em -0.4em rgba(0, 0, 0, 0.67);
+    border: 0.15em solid #000000;
     transition: all .2s ease-in-out;
 }
 
 .learnMoreButton:hover{
-    background-color: #D5D5D5;
-    color: #000000;
-    border: 0.15em solid #000000;
+    background-color: #000000;
+    color: #D5D5D5;
     transition: all .2s ease-in-out;
 }
 
@@ -52,7 +49,11 @@
     transform: scale(0.95);
     transition: all .3s ease-in-out;
 }
-
+.statusIcon{
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.25em;
+}
 .statusIcon:active {
     animation: changingLikeStatus 0.1s ease-in-out;
 }

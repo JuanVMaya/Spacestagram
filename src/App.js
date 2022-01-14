@@ -22,7 +22,22 @@ function App() {
     fetchData();
   }, []);
 
-  dataNASA.forEach(item => { item.likeStatus = false });
+  const changeLikeStatus = (date, likeStatus) => {
+    const newData = dataNASA.map(item => {
+      if (item.date == date) {
+        item.likeStatus = !likeStatus;
+      }
+        return item;
+      });
+    setDataNASA(newData);
+  }
+  const dataProcessing = dataNASA.map(item => {
+    return {
+      ...item,
+      "likeStatus": false
+  } 
+  });
+
   const processedPhotosList = dataNASA.map(item => (
     <PhotoItem
       key={item.date}
@@ -32,6 +47,7 @@ function App() {
       date={item.date}
       copyright={item.copyright}
       likeStatus={item.likeStatus}
+      changeLikeStatus={changeLikeStatus}
     />
   ));
 
