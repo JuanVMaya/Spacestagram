@@ -24,19 +24,13 @@ function App() {
 
   const changeLikeStatus = (date, likeStatus) => {
     const newData = dataNASA.map(item => {
-      if (item.date == date) {
+      if (item.date === date) {
         item.likeStatus = !likeStatus;
       }
-        return item;
-      });
+      return item;
+    });
     setDataNASA(newData);
   }
-  const dataProcessing = dataNASA.map(item => {
-    return {
-      ...item,
-      "likeStatus": false
-  } 
-  });
 
   const processedPhotosList = dataNASA.map(item => (
     <PhotoItem
@@ -46,7 +40,7 @@ function App() {
       explanation={item.explanation}
       date={item.date}
       copyright={item.copyright}
-      likeStatus={item.likeStatus}
+      likeStatus={typeof (item.likeStatus) === "undefined" ? false : item.likeStatus}
       changeLikeStatus={changeLikeStatus}
     />
   ));
@@ -54,7 +48,7 @@ function App() {
   return (
     <>
       <header className={classes.header}>
-        <h1>Spacestagram</h1>
+        <h1 onClick={() => window.location.reload(false)} className={classes.title}>Spacestagram</h1>
         <a href="https://juanvmaya.github.io/personal-portfolio/" target="_blank" rel="noopener noreferrer" className={classes.navLink}>Check Personal Portfolio</a>
       </header>
       <div className={classes.main}>

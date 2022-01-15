@@ -18,6 +18,10 @@
     font-weight: bolder;
 }
 
+.title{
+    cursor: pointer;
+}
+
 .navLink {
     text-decoration: none;
     color: #D5D5D5;
@@ -41,6 +45,28 @@
 .footerText {
     color: #B2F9FC;
     font-size: 1rem;
-    line-height: 0.8rem;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+        left: 1rem;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+
+    .header {
+        width: 80%;
+        margin-left: 10%;
+        top: 0.25rem;
+        bottom: 0.25rem;
+    }
+
+    .navLink {
+        display: none;
+    }
 }

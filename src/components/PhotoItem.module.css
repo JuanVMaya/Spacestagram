@@ -7,6 +7,12 @@
 .photoBox {
     max-width: 100%;
     border-radius: 8px;
+    transition: ease-in-out 0.1s;
+}
+
+.photoBox:hover {
+    transform: scale(1.025);
+    cursor: pointer;
 }
 
 .dateBox,
@@ -26,7 +32,6 @@
     align-content: center;
 }
 
-.likeButton,
 .learnMoreButton {
     padding: 0.2em 0.4em 0.2em 0.4em;
     cursor: pointer;
@@ -36,24 +41,27 @@
     background-color: transparent;
     border-radius: 0.5em;
     border: 0.15em solid #000000;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
-.learnMoreButton:hover{
+.learnMoreButton:hover {
     background-color: #000000;
     color: #D5D5D5;
     transition: all .2s ease-in-out;
 }
 
-.learnMoreButton:active{
+.learnMoreButton:active {
     transform: scale(0.95);
     transition: all .3s ease-in-out;
 }
-.statusIcon{
+
+.statusIcon {
+    cursor: pointer;
     width: 1.5em;
     height: 1.5em;
     margin-left: 0.25em;
 }
+
 .statusIcon:active {
     animation: changingLikeStatus 0.1s ease-in-out;
 }
@@ -62,9 +70,11 @@
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(0.9);
     }
+
     100% {
         transform: scale(1.5);
         /* Creates an out of bounds clicking sensation*/

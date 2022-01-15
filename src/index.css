@@ -12,9 +12,13 @@ body {
 
 h1,h2{
  color:#B2F9FC;
- line-height: 1.5;
+ line-height: 2;
+}
+h1{
+  font-size: 2rem
 }
 p{
   color:#000000;
   font-size: 1rem;
+  line-height: 1.5;
 }
