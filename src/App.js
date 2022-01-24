@@ -5,7 +5,7 @@ import PhotoItem from './components/PhotoItem';
 import LoadingDisplay from './components/LoadingDisplay';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL= `https://api.nasa.gov/planetary/apod?api_key=${ API_KEY }&start_date=2021-10-01`; // Kept API key from the source code even though it is a public API.
+const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=2021-10-01`; // Kept API key from the source code even though it is a public API.
 
 function App() {
   const [dataNASA, setDataNASA] = useState([]);
