@@ -5,7 +5,7 @@ import PhotoItem from "./components/PhotoItem";
 import LoadingDisplay from "./components/LoadingDisplay";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=2022-07-20`; // Kept API key from the source code even though it is a public API.
+const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=2022-07-20`; 
 
 function App() {
   const [dataNASA, setDataNASA] = useState([]);
@@ -18,7 +18,7 @@ function App() {
         const { data: response } = await axios.get(API_URL);
         const localStorageLikes = JSON.parse(localStorage.getItem("nasaLikes"));
         response.map((photo) => {
-          if (photo.date in localStorageLikes) {
+          if (localStorageLikes?.[photo.date]) {
             return (photo.likeStatus = localStorageLikes[photo.date]);
           }
           return (photo.likeStatus = false);
